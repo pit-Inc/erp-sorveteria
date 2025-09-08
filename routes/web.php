@@ -36,7 +36,9 @@ Route::middleware(['splade'])->group(function () {
 
     Route::resource('clientes', ClienteController::class);
     Route::resource('recipientes', RecipienteController::class);
-    Route::resource('sabores', SaborController::class);
+    Route::resource('sabores', SaborController::class)->parameters([
+        'sabores' => 'sabor',
+    ]);
     Route::resource('sorvetes', SorveteController::class);
     Route::resource('funcionarios', FuncionarioController::class);
 

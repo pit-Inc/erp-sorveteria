@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sabor extends Model
 {
-    protected $fillable = ['nome', 'descricao', 'custo', 'preco'];
+    protected $fillable = ['nome', 'descricao', 'custo'];
 }

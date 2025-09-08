@@ -16,14 +16,15 @@ class SorveteController extends Controller
     public function index()
     {
         return view('sorvetes.index', [
-            'sorvetes' => SpladeTable::for(Sorvete::class)
-            ->withGlobalSearch(columns: ['nome'])
-            ->column('id', label: 'ID')
-            ->column('nome', label: 'Nome')
-            ->column('preco', label: 'Preço')
-            ->column('recipiente.nome', label: 'Recipiente')
-            ->column('actions', exportAs: false)
-            ->paginate(15),
+            'sorvetes' => SpladeTable::for(Sorvete::with(['recipiente', 'sabores']))
+                ->withGlobalSearch(columns: ['nome'])
+                ->column('id', label: 'ID')
+                ->column('nome', label: 'Nome')
+                ->column('preco', label: 'Preço')
+                ->column('recipiente.nome', label: 'Recipiente')
+                ->column('sabores', label: 'Sabores')
+                ->column('actions', exportAs: false)
+                ->paginate(15),
         ]);
     }
 

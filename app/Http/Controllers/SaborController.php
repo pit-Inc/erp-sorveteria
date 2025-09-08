@@ -15,7 +15,7 @@ class SaborController extends Controller
                 ->column('nome')
                 ->column('descricao')
                 ->column('custo')
-                ->column('preco')
+                ->column('actions')
                 ->paginate(15),
         ]);;
     }
@@ -36,7 +36,6 @@ class SaborController extends Controller
         $request->validate([
             'nome'  => 'required|string|max:255',
             'custo' => 'required|numeric|min:0',
-            'preco' => 'required|numeric|min:0',
         ]);
 
         Sabor::create($request->all());
@@ -50,15 +49,11 @@ class SaborController extends Controller
         return view('sabores.edit', compact('sabor'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Sabor $sabor)
     {
         $request->validate([
             'nome'  => 'required|string|max:255',
             'custo' => 'required|numeric|min:0',
-            'preco' => 'required|numeric|min:0',
         ]);
 
         $sabor->update($request->all());
@@ -67,9 +62,6 @@ class SaborController extends Controller
             ->with('success', 'Sabor atualizado com sucesso!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Sabor $sabor)
     {
         $sabor->delete();

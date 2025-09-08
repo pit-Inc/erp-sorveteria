@@ -29,12 +29,16 @@
                             {{ __('Recipientes') }}
                         </x-nav-link>
 
-                        <x-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
-                            {{ __('Clientes') }}
+                        <x-nav-link href="{{ route('sabores.index') }}" :active="request()->routeIs('sabores.*')">
+                            {{ __('Sabores') }}
                         </x-nav-link>
 
                         <x-nav-link href="{{ route('funcionarios.index') }}" :active="request()->routeIs('Funcionarios.*')">
                             {{ __('Funcionarios') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
+                            {{ __('Clientes') }}
                         </x-nav-link>
                     </div>
                 </div>
