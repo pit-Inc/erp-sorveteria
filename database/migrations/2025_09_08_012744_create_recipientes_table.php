@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('recipientes', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');        // Nome do recipiente (ex: Casquinha, Copo, Pote)
-            $table->decimal('custo', 8, 2); // Custo de aquisição
-            $table->decimal('preco', 8, 2); // Preço de venda
+            $table->string('nome');
+            $table->decimal('custo', 8, 2);
             $table->timestamps();
         });
     }

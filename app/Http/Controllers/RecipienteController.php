@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recipiente;
 use Illuminate\Http\Request;
+use ProtoneMedia\Splade\SpladeTable;
 
 class RecipienteController extends Controller
 {
@@ -12,8 +13,15 @@ class RecipienteController extends Controller
      */
     public function index()
     {
+
         return view('recipientes.index', [
-            'recipientes' => Recipiente::all(),
+            'recipientes' => SpladeTable::for(Recipiente::class)
+            ->withGlobalSearch(columns: ['nome'])
+            ->column('id', label: 'ID')
+            ->column('nome', label: 'Nome')
+            ->column('custo', label: 'Custo')
+            ->column('actions', exportAs: false)
+            ->paginate(15),
         ]);
     }
 
@@ -27,7 +35,6 @@ class RecipienteController extends Controller
         $request->validate([
             'nome'  => 'required|string|max:255',
             'custo' => 'required|numeric|min:0',
-            'preco' => 'required|numeric|min:0',
         ]);
 
         Recipiente::create($request->all());
@@ -49,7 +56,6 @@ class RecipienteController extends Controller
         $request->validate([
             'nome'  => 'required|string|max:255',
             'custo' => 'required|numeric|min:0',
-            'preco' => 'required|numeric|min:0',
         ]);
 
         $recipiente->update($request->all());
