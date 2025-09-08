@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use ProtoneMedia\Splade\SpladeTable;
 
 class ClienteController extends Controller
 {
     public function index()
     {
         return view('clientes.index', [
-            'clientes' => Cliente::all(),
+            'clientes' => SpladeTable::for(Cliente::class)
+            ->column('name')
+            ->column('email')
+            ->paginate(15),
         ]);
     }
 
