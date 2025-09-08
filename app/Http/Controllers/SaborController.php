@@ -4,14 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Sabor;
 use Illuminate\Http\Request;
+use ProtoneMedia\Splade\SpladeTable;
 
 class SaborController extends Controller
 {
     public function index()
     {
         return view('sabores.index', [
-            'sabores' => Sabor::all(),
-        ]);
+            'sabores' => SpladeTable::for (Sabor::class)
+                ->column('nome')
+                ->column('descricao')
+                ->column('custo')
+                ->column('preco')
+                ->paginate(15),
+        ]);;
     }
 
     /**
