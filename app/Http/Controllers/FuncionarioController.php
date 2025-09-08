@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Funcionario;
 use Illuminate\Http\Request;
+use ProtoneMedia\Splade\SpladeTable;
 
 class FuncionarioController extends Controller
 {
     public function index()
     {
         return view('funcionarios.index', [
-            'funcionarios' => Funcionario::all(),
+            'funcionarios' => SpladeTable::for(Funcionario::class)
+            ->column('name')
+            ->column('email')
+            ->column('telefone')
+            ->column('cargo')
+            ->column('salario')
+            ->paginate(15)
+
         ]);
     }
 

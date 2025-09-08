@@ -14,6 +14,7 @@ class ClienteController extends Controller
             'clientes' => SpladeTable::for(Cliente::class)
             ->column('name')
             ->column('email')
+            ->column('telefone')
             ->paginate(15),
         ]);
     }
