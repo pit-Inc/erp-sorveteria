@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\RecipienteController;
+use App\Http\Controllers\SaborController;
+use App\Http\Controllers\SorveteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +33,11 @@ Route::middleware(['splade'])->group(function () {
 
     // Registers routes to support async File Uploads with Filepond...
     Route::spladeUploads();
+
+    Route::resource('clientes', ClienteController::class);
+    Route::resource('recipientes', RecipienteController::class);
+    Route::resource('sabores', SaborController::class);
+    Route::resource('sorvetes', SorveteController::class);
+    Route::resource('funcionarios', FuncionarioController::class);
+
 });
