@@ -7,7 +7,7 @@
         <x-application-logo class="block h-12 w-auto" />
 
         <div class="mt-8 text-2xl">
-            Bem vindo!
+            PITS INC.
         </div>
     </x-panel>
 </x-layout>
