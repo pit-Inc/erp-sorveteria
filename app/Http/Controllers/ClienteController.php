@@ -12,8 +12,10 @@ class ClienteController extends Controller
     {
         return view('clientes.index', [
             'clientes' => SpladeTable::for(Cliente::class)
-            ->column('name')
+            ->column('nome')
             ->column('email')
+            ->column('telefone')
+            ->column('actions')
             ->paginate(15),
         ]);
     }

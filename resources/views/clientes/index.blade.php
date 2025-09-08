@@ -7,7 +7,7 @@
 
         <x-splade-table :for="$clientes">
             <x-splade-cell actions>
-                <Link href="{{ route('clientes.edit', $item) }}">Editar</Link>
+                <Link class="me-2" href="{{ route('clientes.edit', $item) }}">Editar</Link>
                 <Link method="DELETE" href="{{ route('clientes.destroy', $item) }}" confirm>
                 Remover
                 </Link>
