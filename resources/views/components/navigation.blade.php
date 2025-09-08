@@ -28,6 +28,14 @@
                         <x-nav-link href="{{ route('recipientes.index') }}" :active="request()->routeIs('recipientes.*')">
                             {{ __('Recipientes') }}
                         </x-nav-link>
+
+                        <x-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
+                            {{ __('Clientes') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('funcionarios.index') }}" :active="request()->routeIs('Funcionarios.*')">
+                            {{ __('Funcionarios') }}
+                        </x-nav-link>
                     </div>
                 </div>
 
