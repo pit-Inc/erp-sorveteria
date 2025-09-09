@@ -12,11 +12,12 @@ class FuncionarioController extends Controller
     {
         return view('funcionarios.index', [
             'funcionarios' => SpladeTable::for(Funcionario::class)
-            ->column('name')
+            ->column('nome')
             ->column('email')
             ->column('telefone')
             ->column('cargo')
             ->column('salario')
+            ->column('actions')
             ->paginate(15)
 
         ]);

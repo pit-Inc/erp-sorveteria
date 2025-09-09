@@ -3,17 +3,15 @@
         {{ __('Home') }}
     </x-slot>
 
-    <x-panel class="flex flex-col items-center pt-16 pb-16">
-        <x-application-logo class="block h-12 w-auto" />
+    </x-panel class="">
 
+    <x-splade-form :default="$funcionario" :action="route('funcionarios.update', $funcionario)" method="PUT">
+        <x-splade-input name="nome" label="Nome do Funcionario" />
+        <x-splade-textarea name="email" label="E-mail" />
+        <x-splade-input name="telefone" label="Telefone"/>
+        <x-splade-input name="cargo" label="Cargo" />
+        <x-splade-input name="salario" type="number" step="0.01" label="Salário" />
 
-    </x-panel>
-
-    <x-splade-form :default="$sabor" :action="route('sabores.update', $sabor)" method="PUT">
-        <x-splade-input name="nome" label="Nome do Sabor" />
-        <x-splade-textarea name="descricao" label="Descrição" />
-        <x-splade-input name="custo" type="number" step="0.01" label="Custo" />
-        <x-splade-input name="preco" type="number" step="0.01" label="Preço" />
         <x-splade-submit label="Atualizar" />
     </x-splade-form>
 </x-layout>
