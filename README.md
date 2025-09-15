@@ -18,7 +18,7 @@ O projeto segue a arquitetura **MVC** utilizando o framework **Laravel 12**, rod
 ---
 ## Instalção
 
-- Baixar o porjeto
+- Baixar o projeto
 - Rodar o comando **npm install**
 - Rodar o comando **composer install**
 - Rodar o comando **npm run dev**
