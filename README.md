@@ -14,3 +14,12 @@ O projeto segue a arquitetura **MVC** utilizando o framework **Laravel 12**, rod
 - **PostgreSQL**
 - Composer & NPM (Vite)
 - Git (controle de versão)
+
+---
+## Instalção
+
+- Baixar o porjeto
+- Rodar o comando **npm install**
+- Rodar o comando **composer install**
+- Rodar o comando **npm run dev**
+- Rodar o comando **php artisan serve**
